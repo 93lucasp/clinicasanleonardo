@@ -17,6 +17,9 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+button:hover {
+  cursor: pointer; }
+
 .navMenu {
   width: 100%;
   position: fixed;
@@ -25,7 +28,7 @@ a {
   left: 0;
   background-color: #fff;
   padding: 1em 0;
-  z-index: 1; }
+  z-index: 2; }
   @media screen and (min-width: 992px) {
     .navMenu {
       border-bottom: 2px solid #01a6dc; } }
@@ -182,27 +185,63 @@ a {
         .navMenu__dropDown ul li a {
           color: #fff; }
 
-.bg-video {
+.bgVideo {
   position: relative;
   width: 100%;
   height: 34em;
-  z-index: -1;
   margin-top: 4em; }
   @media screen and (max-width: 992px) {
-    .bg-video {
+    .bgVideo {
       margin-top: 8em; } }
-  .bg-video .test {
+  .bgVideo__up {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    text-align: center; }
+    .bgVideo__up__title {
+      position: absolute;
+      top: 36%;
+      left: 20%;
+      width: 60%;
+      color: #fff;
+      padding: 1em; }
+      .bgVideo__up__title h1 {
+        border-top: 3px solid #fff;
+        padding-top: .5em;
+        width: 66%;
+        margin: 0 auto .5em; }
+      .bgVideo__up__title h2 {
+        border-bottom: 3px solid #fff;
+        padding-bottom: .5em;
+        width: 35%;
+        margin: 0 auto; }
+  .bgVideo__container {
     position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
     overflow: hidden; }
-    .bg-video .test video {
+    .bgVideo__container video {
       min-width: 100%;
       min-height: 100%;
       width: auto;
       height: auto;
       z-index: -1;
       overflow: hidden; }
+
+.btn-primary-new {
+  background-color: #01a6dc;
+  color: #fff;
+  padding: .8em 3em;
+  border-radius: 50px; }
+
+.margin-top-4 {
+  margin-top: 4em; }
 
 /*# sourceMappingURL=main.css.map */
