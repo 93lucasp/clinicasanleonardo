@@ -24,7 +24,8 @@ a {
   right: 0;
   left: 0;
   background-color: #fff;
-  padding: 1em 0; }
+  padding: 1em 0;
+  z-index: 1; }
   @media screen and (min-width: 992px) {
     .navMenu {
       border-bottom: 2px solid #01a6dc; } }
@@ -180,5 +181,28 @@ a {
         border-bottom: 1px solid #fff; }
         .navMenu__dropDown ul li a {
           color: #fff; }
+
+.bg-video {
+  position: relative;
+  width: 100%;
+  height: 34em;
+  z-index: -1;
+  margin-top: 4em; }
+  @media screen and (max-width: 992px) {
+    .bg-video {
+      margin-top: 8em; } }
+  .bg-video .test {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden; }
+    .bg-video .test video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      overflow: hidden; }
 
 /*# sourceMappingURL=main.css.map */
