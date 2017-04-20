@@ -1,0 +1,181 @@
+.navMenu {
+    @include size(100%, null);
+    @include position(fixed, 0, 0, null, 0);
+    background-color: #fff;
+    padding: 1em 0;
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        border-bottom: 2px solid #01a6dc;
+    }
+    &__left {
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: none!important;
+        }
+        li {
+            margin-left: 3rem;
+        }
+    }
+    &__right {
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: none!important;
+        }
+        li {
+            margin-right: 3rem;
+        }
+    }
+    &__logo {
+        width: 25%;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            width: 50%;
+            margin-bottom: 1em;
+        }
+    }
+    &__hamburger {
+        @include size(70px, 70px);
+        @include position(absolute, 20px, 0, null, null);
+        border: 1px solid #fff;
+        margin: 0;
+        padding: 0;
+        display: none;
+        visibility: hidden;
+        border-radius: 50%;
+        overflow: hidden;
+        font-size: 0;
+        z-index: 19;
+        transition: background 0.3s;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: block;
+            visibility: visible;
+        }
+        &:focus {
+            outline: none;
+        }
+        span {
+            @include size(null, 2px);
+            @include position(absolute, 34px, 15px, null, 15px);
+            display: block;
+            background: #fff;
+            &:after,
+            &:before {
+                @include size(100%, 2px);
+                @include position(absolute, null, null, null, 0);
+                display: block;
+                content: "";
+                background-color: #fff;
+            }
+            &:before {
+                top: -8px;
+            }
+            &:after {
+                bottom: -8px;
+            }
+        }
+        &--effect {
+            background-color: #01a6dc;
+            span {
+                transition: background 0s 0.3s;
+                &:before,
+                &:after {
+                    -webkit-transition-duration: 0.3s, 0.3s;
+                    transition-duration: 0.3s, 0.3s;
+                    -webkit-transition-delay: 0.3s, 0s;
+                    transition-delay: 0.3s, 0s;
+                }
+                &:before {
+                    transition-property: top, transform;
+                }
+                &:after {
+                    transition-property: bottom, transform;
+                }
+            }
+            &.is-active {
+                background-color: #01a6dc;
+                span {
+                    background: none;
+                    &:before {
+                        top: 0;
+                        -ms-transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        -webkit-transition-delay: 0s, 0.3s;
+                        transition-delay: 0s, 0.3s;
+                        background-color: #fff;
+                    }
+                    &:after {
+                        bottom: 0;
+                        -ms-transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        -webkit-transition-delay: 0s, 0.3s;
+                        transition-delay: 0s, 0.3s;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .col-sm-4--centerContent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            justify-content: flex-start;
+        }
+        div {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    ul {
+        display: inline-flex;
+        li {
+            a {
+                color: #01a6dc;
+                position: relative;
+                &:before,
+                &:after {
+                    @include size(50px, 50px);
+                    @include position(absolute, 50%, null, null, 50%);
+                    border: 1px solid rgba(1, 166, 220, .3);
+                    border-radius: 50%;
+                    content: '';
+                    opacity: 0;
+                    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+                    transition: transform 0.3s, opacity 0.3s;
+                    @include transform(translateX(-50%), translateY(-50%), scale(0.2));
+                }
+                &:after {
+                    @include size(40px, 40px);
+                    border-width: 4px;
+                    @include transform(translateX(-50%), translateY(-50%), scale(0.8));
+                }
+                &:hover,
+                &:focus {
+                    color: #0185b2;
+                    &:before,
+                    &:after {
+                        opacity: 1;
+                        @include transform(translateX(-50%), translateY(-50%), scale(1));
+                    }
+                }
+            }
+        }
+    }
+    &__dropDown {
+        display: none;
+        background-color: #01a6dc;
+        margin-top: 1em;
+        text-transform: uppercase;
+        ul {
+            display: block;
+            text-align: center;
+            li {
+                padding: 1.2em;
+                border-bottom: 1px solid #fff;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
