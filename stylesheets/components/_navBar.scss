@@ -1,38 +1,92 @@
-.navMenu {
+.navBar {
     @include size(100%, null);
     @include position(fixed, 0, 0, null, 0);
+    @include padding(3.5em, null, 3.5em, null);
     background-color: #fff;
-    padding: 1em 0;
-    z-index: 2;
-    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
-        border-bottom: 2px solid #01a6dc;
-    }
+    border-bottom: 2px solid #01a6dc;
+    z-index: 9999;
     &__left {
-        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
-            display: none!important;
-        }
-        li {
-            margin-left: 3rem;
-        }
+        width: 50%;
+        float: left;
+        text-align: left;
     }
     &__right {
-        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
-            display: none!important;
-        }
-        li {
-            margin-right: 3rem;
-        }
+        width: 50%;
+        float: right;
+        text-align: right;
     }
     &__logo {
-        width: 25%;
-        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
-            width: 50%;
-            margin-bottom: 1em;
+        @include size(6em, null);
+        @include calc(left, '50% - 3em');
+        top: -2em;
+        position: absolute;
+    }
+    ul {
+        @include size(100%, null);
+        a {
+            color: #01a6dc;
+            &:hover,
+            &:visited,
+            &:active {
+                color: #01a6dc;
+            }
+            li {
+                @include margin(null, 4em, null, 4em);
+                display: inline-block;
+            }
+        }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        @include padding(4em, null, 4em, null);
+        .container {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        ul {
+            display: none;
+            position: absolute;
+            top: 4.1em;
+            background-color: #fff;
+            a {
+                li {
+                    width: 100%;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    font-size: 1.4em;
+                    border-bottom: 1px solid #01a6dc;
+                    @include padding(null, 6em, null, 6em);
+                    @include margin(null, 0, null, 0);
+                    &:after {
+                        content: '\f105';
+                        font-family: fontAwesome;
+                        color: #01a6dc;
+                        position: absolute;
+                        right: 7em;
+                    }
+                }
+            }
+        }
+        &__logo {
+            @include size(6em, null);
+            left: 8em;
+            top: -3em;
+            position: absolute;
+        }
+        &__left {
+            width: 100%;
+            float: none;
+            text-align: inherit;
+        }
+        &__right {
+            width: 100%;
+            float: none;
+            text-align: inherit;
         }
     }
     &__hamburger {
-        @include size(70px, 70px);
-        @include position(absolute, 20px, 0, null, null);
+        @include size(4.5em, 4.5em);
+        @include position(absolute, -2em, 8em, null, null);
         border: 1px solid #fff;
         margin: 0;
         padding: 0;
@@ -40,7 +94,6 @@
         visibility: hidden;
         border-radius: 50%;
         overflow: hidden;
-        font-size: 0;
         z-index: 19;
         transition: background 0.3s;
         @media screen and (max-width: map-get($grid-breakpoints, lg)) {
@@ -88,7 +141,7 @@
                     transition-property: bottom, transform;
                 }
             }
-            &.is-active {
+            &.active {
                 background-color: #01a6dc;
                 span {
                     background: none;
@@ -110,71 +163,6 @@
                         transition-delay: 0s, 0.3s;
                         background-color: #fff;
                     }
-                }
-            }
-        }
-    }
-    .col-sm-4--centerContent {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
-            justify-content: flex-start;
-        }
-        div {
-            position: absolute;
-            bottom: 0;
-        }
-    }
-    ul {
-        display: inline-flex;
-        li {
-            a {
-                color: #01a6dc;
-                position: relative;
-                &:before,
-                &:after {
-                    @include size(50px, 50px);
-                    @include position(absolute, 50%, null, null, 50%);
-                    border: 1px solid rgba(1, 166, 220, .3);
-                    border-radius: 50%;
-                    content: '';
-                    opacity: 0;
-                    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-                    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-                    transition: transform 0.3s, opacity 0.3s;
-                    @include transform(translateX(-50%), translateY(-50%), scale(0.2));
-                }
-                &:after {
-                    @include size(40px, 40px);
-                    border-width: 4px;
-                    @include transform(translateX(-50%), translateY(-50%), scale(0.8));
-                }
-                &:hover,
-                &:focus {
-                    color: #0185b2;
-                    &:before,
-                    &:after {
-                        opacity: 1;
-                        @include transform(translateX(-50%), translateY(-50%), scale(1));
-                    }
-                }
-            }
-        }
-    }
-    &__dropDown {
-        display: none;
-        background-color: #01a6dc;
-        margin-top: 1em;
-        text-transform: uppercase;
-        ul {
-            display: block;
-            text-align: center;
-            li {
-                padding: 1.2em;
-                border-bottom: 1px solid #fff;
-                a {
-                    color: #fff;
                 }
             }
         }

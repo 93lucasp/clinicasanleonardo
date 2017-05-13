@@ -1,0 +1,12 @@
+.btn-primary {
+    @include padding(.8em, 3em, .8em, 3em);
+    background-color: #01a6dc;
+    color: #fff;
+    border-radius: 50px;
+    &:active {
+    	background-color: #01a6dc;
+    }
+    &:hover {
+    	opacity: .9;
+    }
+}
