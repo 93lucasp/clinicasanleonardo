@@ -1,10 +1,11 @@
 .btn-primary {
     @include padding(.8em, 3em, .8em, 3em);
-    background-color: #01a6dc;
-    color: #fff;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
     border-radius: 50px;
+    border:0;
     &:active {
-    	background-color: #01a6dc;
+    	background-color: map-get($colors, primary);
     }
     &:hover {
     	opacity: .9;

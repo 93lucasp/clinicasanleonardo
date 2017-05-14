@@ -1,13 +1,24 @@
-@mixin transition($how, $time, $effect) {
-    -webkit-transition: $how $time $effect;
-    transition: $how $time $effect;
-}
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    transition: $property;
 
-@mixin transform($par1,$par2,$par3) {
-    -ms-transform: $par1 $par2 $par3;
-    -moz-transform: $par1 $par2 $par3;
-    -webkit-transform: $par1 $par2 $par3;
-    transform: $par1 $par2 $par3;
+}
+@mixin transition-duration($property1, $property2) {
+    -webkit-transition-duration: $property1, $property2;
+    transition-duration: $property1, $property2;
+
+}
+@mixin transition-delay($property1, $property2) {
+    -webkit-transition-delay: $property1, $property2;
+    transition-delay: $property1, $property2;
+
+}
+@mixin transform($property) {
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -webkit-transform: $property;
+    transform: $property;
 
 }
 

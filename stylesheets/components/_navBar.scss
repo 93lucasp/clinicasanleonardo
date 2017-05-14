@@ -2,84 +2,118 @@
     @include size(100%, null);
     @include position(fixed, 0, 0, null, 0);
     @include padding(3.5em, null, 3.5em, null);
-    background-color: #fff;
-    border-bottom: 2px solid #01a6dc;
+    background-color: map-get($colors, white);
+    border-bottom: 2px solid map-get($colors, primary);
     z-index: 9999;
+    font-family: 'Lato', sans-serif;
     &__left {
-        width: 50%;
+        @include size(50%, null);
         float: left;
         text-align: left;
     }
     &__right {
-        width: 50%;
+        @include size(50%, null);
         float: right;
         text-align: right;
     }
     &__logo {
         @include size(6em, null);
+        @include position(absolute, -2em, null, null, null);
         @include calc(left, '50% - 3em');
-        top: -2em;
-        position: absolute;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            @include position(null, -3em, null, null, 8em);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            @include position(null, null, null, null, 4em);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+            @include position(null, null, null, null, 2em);
+        }
     }
     ul {
         @include size(100%, null);
         a {
-            color: #01a6dc;
+            color: map-get($colors, primary);
+            position: relative;
             &:hover,
             &:visited,
             &:active {
-                color: #01a6dc;
+                color: map-get($colors, primary);
             }
             li {
                 @include margin(null, 4em, null, 4em);
                 display: inline-block;
+                @media screen and (min-width: map-get($grid-breakpoints, xl)) {
+                    font-size: 1.2em;
+                }
+            }
+            @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+                &:before,
+                &:after {
+                    @include size(50px, 50px);
+                    @include position(absolute, 50%, null, null, 50%);
+                    @include transition(opacity 0.3s);
+                    @include transform(translateX(-50%) translateY(-50%) scale(0.2));
+                    border: 1px solid rgba(1, 166, 220, .3);
+                    border-radius: 50%;
+                    content: '';
+                    opacity: 0;
+                }
+                &:after {
+                    @include size(40px, 40px);
+                    @include transform(translateX(-50%) translateY(-50%) scale(0.8));
+                    border-width: 4px;
+                }
+                &:hover,
+                &:focus {
+                    color: map-get($colors, primary);
+                    &:before,
+                    &:after {
+                        opacity: 1;
+                        @include transform(translateX(-50%) translateY(-50%) scale(1));
+                    }
+                }
             }
         }
     }
     @media screen and (max-width: map-get($grid-breakpoints, lg)) {
         @include padding(4em, null, 4em, null);
         .container {
-            padding: 0;
-            margin: 0;
-            width: 100%;
+            @include size(100%, null);
+            @include padding(0, 0, 0, 0);
+            @include margin(0, 0, 0, 0);
         }
         ul {
+            @include position(absolute, 4.1em, null, null, null);
             display: none;
-            position: absolute;
-            top: 4.1em;
-            background-color: #fff;
+            background-color: map-get($colors, white);
             a {
                 li {
-                    width: 100%;
-                    padding-top: 1em;
-                    padding-bottom: 1em;
+                    @include size(100%, null);
+                    @include padding(1em, null, 1em, null);
                     font-size: 1.4em;
-                    border-bottom: 1px solid #01a6dc;
-                    @include padding(null, 6em, null, 6em);
+                    border-bottom: 1px solid map-get($colors, primary);
+                    @include padding(null, 2em, null, 2em);
                     @include margin(null, 0, null, 0);
                     &:after {
+                        @include position(absolute, null, 4em, null, null);
                         content: '\f105';
                         font-family: fontAwesome;
-                        color: #01a6dc;
-                        position: absolute;
-                        right: 7em;
+                        color: map-get($colors, primary);
+                        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+                            @include position(null, null, 2em, null, null);
+                        }
                     }
                 }
             }
         }
-        &__logo {
-            @include size(6em, null);
-            left: 8em;
-            top: -3em;
-            position: absolute;
-        }
         &__left {
-            width: 100%;
+            @include size(100%, null);
             float: none;
             text-align: inherit;
         }
         &__right {
-            width: 100%;
+            @include size(100%, null);
             float: none;
             text-align: inherit;
         }
@@ -87,15 +121,22 @@
     &__hamburger {
         @include size(4.5em, 4.5em);
         @include position(absolute, -2em, 8em, null, null);
-        border: 1px solid #fff;
-        margin: 0;
-        padding: 0;
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            @include position(null, null, 4em, null, null);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+            @include position(null, null, 2em, null, null);
+            @include size(4em, 4em);
+        }
+        border: 1px solid map-get($colors, white);
+        @include padding(0, 0, 0, 0);
+        @include margin(0, 0, 0, 0);
         display: none;
         visibility: hidden;
         border-radius: 50%;
         overflow: hidden;
         z-index: 19;
-        transition: background 0.3s;
+        @include transition(background 0.3s);
         @media screen and (max-width: map-get($grid-breakpoints, lg)) {
             display: block;
             visibility: visible;
@@ -106,33 +147,34 @@
         span {
             @include size(null, 2px);
             @include position(absolute, 34px, 15px, null, 15px);
+            @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+                @include position(absolute, 30px, 15px, null, 15px);
+            }
             display: block;
-            background: #fff;
+            background: map-get($colors, white);
             &:after,
             &:before {
                 @include size(100%, 2px);
                 @include position(absolute, null, null, null, 0);
                 display: block;
                 content: "";
-                background-color: #fff;
+                background-color: map-get($colors, white);
             }
             &:before {
-                top: -8px;
+                @include position(null, -8px, null, null, null);
             }
             &:after {
-                bottom: -8px;
+                @include position(null, null, null, -8px, null);
             }
         }
         &--effect {
-            background-color: #01a6dc;
+            background-color: map-get($colors, primary);
             span {
-                transition: background 0s 0.3s;
+                @include transition(background 0s 0.3s);
                 &:before,
                 &:after {
-                    -webkit-transition-duration: 0.3s, 0.3s;
-                    transition-duration: 0.3s, 0.3s;
-                    -webkit-transition-delay: 0.3s, 0s;
-                    transition-delay: 0.3s, 0s;
+                    @include transition-duration(0.3s, 0.3s);
+                    @include transition-delay(0.3s, 0s);
                 }
                 &:before {
                     transition-property: top, transform;
@@ -142,26 +184,20 @@
                 }
             }
             &.active {
-                background-color: #01a6dc;
+                background-color: map-get($colors, primary);
                 span {
                     background: none;
                     &:before {
                         top: 0;
-                        -ms-transform: rotate(45deg);
-                        -webkit-transform: rotate(45deg);
-                        transform: rotate(45deg);
-                        -webkit-transition-delay: 0s, 0.3s;
-                        transition-delay: 0s, 0.3s;
-                        background-color: #fff;
+                        @include transform(rotate(45deg));
+                        @include transition-delay(0s, 0.3s);
+                        background-color: map-get($colors, white);
                     }
                     &:after {
                         bottom: 0;
-                        -ms-transform: rotate(-45deg);
-                        -webkit-transform: rotate(-45deg);
-                        transform: rotate(-45deg);
-                        -webkit-transition-delay: 0s, 0.3s;
-                        transition-delay: 0s, 0.3s;
-                        background-color: #fff;
+                        @include transform(rotate(-45deg));
+                        @include transition-delay(0s, 0.3s);
+                        background-color: map-get($colors, white);
                     }
                 }
             }
