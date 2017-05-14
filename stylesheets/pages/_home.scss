@@ -1,0 +1,163 @@
+.bgVideo {
+    @include size(100%, 34em);
+    @include margin(8em, null, null, null);
+    position: relative;
+    @media screen and (min-width: 2500px) {
+        @include size(100%, 50em);
+    }
+    @media screen and (min-width: 1500px) {
+        @include size(100%, 40em);
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        @include margin(8em, null, null, null);
+    }
+    &__up {
+        @include size(100%, 100%);
+        @include position(absolute, 0, 0, 0, 0);
+        @include padding(10em, 0, 0, null);
+        z-index: 1;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .4);
+        &__title {
+            color: map-get($colors, white);
+            @include margin(0, auto, 0, auto);
+            h2 {
+                @include margin(.6em, null, 2em, null);
+            }
+        }
+    }
+    &__container {
+        @include size(100%, 100%);
+        @include position(absolute, null, null, null, null);
+        text-align: center;
+        overflow: hidden;
+        video {
+            @include position(absolute, 60%, null, null, 50%);
+            @media screen and (min-width: 2500px) {
+                @include position(null, 100%, null, null, null);
+            }
+            @media screen and (min-width: 1500px) {
+                @include position(null, 85%, null, null, null);
+            }
+            @include size(auto, auto);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+            @include transform(translateX(-50%) translateY(-50%));
+        }
+    }
+}
+
+.clinic {
+    @include padding(3em, null, 3em, null);
+    a {
+        text-decoration: none;
+    }
+    &__container {
+        @include padding(2em, 2em, 0, 2em);
+        margin-top: -7em;
+        background-color: map-get($colors, white);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        z-index: 999;
+        &__description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: map-get($colors, gray);
+        }
+        &__rooms {
+            @include margin(4em, null, null, null);
+            img {
+                @include size(100%, 9em);
+                @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                    @include size(null, 18em);
+                }
+            }
+            &__title {
+                @include margin(.8em, null, 3em, null);
+                color: map-get($colors, primary);
+                font-weight: bold;
+            }
+            div {
+                @include transition(ease .2s);
+                &:hover {
+                    @include margin(-.4em, null, null, null);
+                }
+            }
+        }
+    }
+}
+
+.services {
+    @include padding(3em, null, 3em, null);
+    text-align: center;
+    &__title {
+        @include margin(null, null, 2em, null);
+        color: map-get($colors, primary);
+        font-weight: bold;
+    }
+    &__contIcon {
+        @include size(8em, 8em);
+        @include margin(0, auto, 0, auto);
+        border-radius: 50%;
+        text-align: center;
+        + h6 {
+            @include margin(.8em, null, 4em, null);
+            color: map-get($colors, gray);
+            font-weight: bold;
+        }
+        img {
+            @include margin(2em, null, null, null);
+        }
+    }
+}
+
+.contacts {
+    @include padding(3em, null, 3em, null);
+    text-align: center;
+    #map {
+        @include size(100%, 400px);
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            @include margin(null, null, 3em, null);
+        }
+    }
+    h2 {
+        margin-bottom: 2em;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            @include margin(null, null, 1em, null);
+        }
+        color: map-get($colors, gray);
+    }
+    a {
+        color: map-get($colors, primary);
+        text-decoration: none;
+    }
+    &__email,
+    &__phone {
+        @include padding(1em, 0, 1em, 0);
+        @include margin(null, null, 1em, null);
+        background-color: map-get($colors, white_dark);
+        border-radius: 4px;
+        @include transition(ease .2s);
+        z-index: -1;
+        &:hover {
+            background-color: map-get($colors, gray_light);
+            @include margin(-.4em, null, null, null);
+        }
+        h4 {
+            @include margin(null, null, 4em, null);
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                @include margin(null, null, 2em, null);
+            }
+        }
+    }
+    img {
+        @include size(2.5em, null);
+        @include margin(1em, auto, 1em, auto);
+        display: block;
+    }
+}
+
+hr {
+    background-color: map-get($colors, primary);
+}

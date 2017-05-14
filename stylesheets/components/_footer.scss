@@ -1,0 +1,40 @@
+.footer {
+    @include size(100%, null);
+    @include padding(1em, null, 1em, null);
+    color: map-get($colors, white);
+    background-color: map-get($colors, primary);
+    h1 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    p {
+        @include margin(null, null, 0, null);
+        font-size: .7em;
+    }
+    &__copy {
+        @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+            @include position(absolute, null, null, 0, null);
+        }
+        a {
+            color: map-get($colors, gray);
+        }
+    }
+    &__social {
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+        }
+        a {
+            &:hover {
+                img {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        img {
+            @include size(3em, null);
+            -webkit-transition: -webkit-transform .6s ease-in-out;
+            transition: transform .6s ease-in-out;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "vendors/lightbox.min.css";
+@import "vendors/animate.css";
+
+@import "base/reset";
+@import "helpers/variables";
+@import "helpers/mixin";
+@import "components/navBar";
+@import "components/footer";
+@import "pages/home";
+
+@import "components/common-components";
+@import "components/override-bootstrap";
