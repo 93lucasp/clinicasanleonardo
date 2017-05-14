@@ -2,15 +2,6 @@
     @include size(100%, 34em);
     @include margin(8em, null, null, null);
     position: relative;
-    @media screen and (min-width: 2500px) {
-        @include size(100%, 50em);
-    }
-    @media screen and (min-width: 1500px) {
-        @include size(100%, 40em);
-    }
-    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
-        @include margin(8em, null, null, null);
-    }
     &__up {
         @include size(100%, 100%);
         @include position(absolute, 0, 0, 0, 0);
@@ -26,24 +17,44 @@
             }
         }
     }
-    &__container {
-        @include size(100%, 100%);
-        @include position(absolute, null, null, null, null);
-        text-align: center;
-        overflow: hidden;
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        @include background('../images/dogs.jpg');
+        @include padding(6em, null, null, null);
         video {
-            @include position(absolute, 60%, null, null, 50%);
-            @media screen and (min-width: 2500px) {
-                @include position(null, 100%, null, null, null);
+            display: none;
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        @media screen and (min-width: 2500px) {
+            @include size(100%, 50em);
+        }
+        @media screen and (min-width: 1500px) {
+            @include size(100%, 40em);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            @include margin(8em, null, null, null);
+        }
+        &__container {
+            @include size(100%, 100%);
+            @include position(absolute, null, null, null, null);
+            text-align: center;
+            overflow: hidden;
+            video {
+                @include position(absolute, 60%, null, null, 50%);
+                @media screen and (min-width: 2500px) {
+                    @include position(null, 100%, null, null, null);
+                }
+                @media screen and (min-width: 1900px) {
+                    @include position(null, 85%, null, null, null);
+                }
+                @media screen and (min-width: 1500px) {
+                    @include position(null, 68%, null, null, null);
+                }
+                @include size(auto, auto);
+                min-width: 100%;
+                min-height: 100%;
+                @include transform(translateX(-50%) translateY(-50%));
             }
-            @media screen and (min-width: 1500px) {
-                @include position(null, 85%, null, null, null);
-            }
-            @include size(auto, auto);
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -100;
-            @include transform(translateX(-50%) translateY(-50%));
         }
     }
 }
@@ -89,7 +100,7 @@
 }
 
 .services {
-    @include padding(3em, null, 3em, null);
+    @include padding(3em, null, null, null);
     text-align: center;
     &__title {
         @include margin(null, null, 2em, null);

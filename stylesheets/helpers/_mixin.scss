@@ -54,7 +54,7 @@
     left: $left
 }
 
-@mixin background-center($url) {
+@mixin background($url) {
     background-size: cover;
     background-image: url($url);
     background-position: center center;

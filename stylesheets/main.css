@@ -295,17 +295,6 @@ body, html {
   height: 34em;
   margin-top: 8em;
   position: relative; }
-  @media screen and (min-width: 2500px) {
-    .bgVideo {
-      width: 100%;
-      height: 50em; } }
-  @media screen and (min-width: 1500px) {
-    .bgVideo {
-      width: 100%;
-      height: 40em; } }
-  @media screen and (max-width: 992px) {
-    .bgVideo {
-      margin-top: 8em; } }
   .bgVideo__up {
     width: 100%;
     height: 100%;
@@ -329,31 +318,53 @@ body, html {
       .bgVideo__up__title h2 {
         margin-top: 0.6em;
         margin-bottom: 2em; }
-  .bgVideo__container {
+  @media screen and (max-width: 992px) {
+    .bgVideo {
+      background-size: cover;
+      background-image: url("../images/dogs.jpg");
+      background-position: center center;
+      padding-top: 6em; }
+      .bgVideo video {
+        display: none; } }
+@media screen and (min-width: 992px) and (min-width: 2500px) {
+  .bgVideo {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    text-align: center;
-    overflow: hidden; }
-    .bgVideo__container video {
+    height: 50em; } }
+@media screen and (min-width: 992px) and (min-width: 1500px) {
+  .bgVideo {
+    width: 100%;
+    height: 40em; } }
+@media screen and (min-width: 992px) and (max-width: 992px) {
+  .bgVideo {
+    margin-top: 8em; } }
+  @media screen and (min-width: 992px) {
+    .bgVideo__container {
+      width: 100%;
+      height: 100%;
       position: absolute;
-      top: 60%;
-      left: 50%;
-      width: auto;
-      height: auto;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -100;
-      -ms-transform: translateX(-50%) translateY(-50%);
-      -moz-transform: translateX(-50%) translateY(-50%);
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-50%) translateY(-50%); }
-      @media screen and (min-width: 2500px) {
-        .bgVideo__container video {
-          top: 100%; } }
-      @media screen and (min-width: 1500px) {
-        .bgVideo__container video {
-          top: 85%; } }
+      text-align: center;
+      overflow: hidden; }
+      .bgVideo__container video {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%); } }
+    @media screen and (min-width: 992px) and (min-width: 2500px) {
+      .bgVideo__container video {
+        top: 100%; } }
+    @media screen and (min-width: 992px) and (min-width: 1900px) {
+      .bgVideo__container video {
+        top: 85%; } }
+    @media screen and (min-width: 992px) and (min-width: 1500px) {
+      .bgVideo__container video {
+        top: 68%; } }
 
 .clinic {
   padding-top: 3em;
@@ -396,7 +407,6 @@ body, html {
 
 .services {
   padding-top: 3em;
-  padding-bottom: 3em;
   text-align: center; }
   .services__title {
     margin-bottom: 2em;
