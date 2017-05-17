@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Clinica San Leonardo</title>
+    <meta name="description" content="Clinica veterinaria San Leonardo | Ardore Marina" />
+    <meta name="keywords" content="veterinario, veterinary, calabria, reggio calabria, clinica, clinica veterinaria, ambulatorio, animali, gatti, cani, dogs, cats, doctor, dottore, medico, ardore marina, struttura, animali domestici, animali esotici, ospedale, locri, siderno, bovalino, natile" />
+    <meta name="author" content="Luca Spezzano" />
+    <meta name="copyright" content="Clinica veterinaria San Leonardo" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:url" content="http://www.clinicasanleonardo.it" />
+    <meta property="og:title" content="Clinica veterinaria San Leonardo" />
+    <meta property="og:description" content="Scopri dove si trova la struttura ed i servizi che offriamo" />
+    <meta property="og:image" content="./images/dogsiphone.jpg" />
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/main.min.css">
+</head>
+
+<body>
+    <nav class="navBar">
+        <div class="container">
+            <a href="index.html">
+                <img src="./images/logo.jpg" class="navBar__logo" alt="logo">
+            </a>
+            <ul class="bounceInDown animated">
+                <div class="navBar__left">
+                    <a href="#" onclick="App.scrollTo('.btn-primary')">
+                        <li>
+                            La Clinica
+                        </li>
+                    </a>
+                    <a href="#" onclick="App.scrollTo('.services')">
+                        <li>
+                            Servizi
+                        </li>
+                    </a>
+                </div>
+                <div class="navBar__right">
+                    <a href="#" onclick="App.scrollTo('.contacts')">
+                        <li>
+                            Dove siamo
+                        </li>
+                    </a>
+                    <a href="#" onclick="App.scrollTo('.contacts')">
+                        <li>
+                            Contatti
+                        </li>
+                    </a>
+                </div>
+            </ul>
+            <div class="navBar__hamburger navBar__hamburger--effect" onclick="App.hamburger(this)">
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="bgVideo">
+        <div class="bgVideo__up">
+            <div class="container">
+                <div class="bgVideo__up__title">
+                    <h1>LA NOSTRA COMPETENZA</h1>
+                    <h2>AL TUO SERVIZIO</h2>
+                    <button type="button" class="btn btn-primary" onclick="App.scrollTo('.services')">SCOPRI I NOSTRI SERVIZI</button>
+                </div>
+            </div>
+        </div>
+        <div class="bgVideo__container">
+            <video autoplay loop muted>
+                <source src="./videos/dog.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="clinic">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 clinic__container">
+                    <p class="clinic__container__description">La clinica veterinaria San Leonardo si sviluppa su un'area di 172m² a Marina di Ardore. Essa nasce dalla seria professionalità e dalla indiscussa preparazione del direttore sanitario Dott. Antonio Ferdinando Giugno.
+                    </p>
+                    <p class="clinic__container__description">
+                        La moderna struttura si avvale di un team di giovani medici veterinari, chirurghi, anestesisti e specialisti, che operano quotidianamente con spirito di abnegazione nel pieno rispetto delle cure e dell'assistenza del paziente.
+                    </p>
+                    <p class="clinic__container__description">La struttura si suddivide nel seguente modo.</p>
+                </div>
+            </div>
+            <div class="row clinic__container__rooms">
+                <div class="col-lg-3">
+                    <a href="./images/salaattesa.jpg" data-lightbox="rooms" data-title="La nostra sala d'attesa">
+                        <img src="./images/salaattesa.jpg" alt="sala d'attesa">
+                        <h5 class="clinic__container__rooms__title">Sala d'attesa</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/amministrazione.jpg" data-lightbox="rooms" data-title="Amministrazione">
+                        <img src="./images/amministrazione.jpg" alt="amministrazione">
+                        <h5 class="clinic__container__rooms__title">Amministrazione</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/salavisite1.jpg" data-lightbox="rooms" data-title="La nostra prima sala visite">
+                        <img src="./images/salavisite1.jpg" alt="sala visite 1">
+                        <h5 class="clinic__container__rooms__title">Sala visite 1</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/laboratorioanalisi.jpg" data-lightbox="rooms" data-title="Il nostro laboratorio analisi">
+                        <img src="./images/laboratorioanalisi.jpg" alt="laboratorio analisi">
+                        <h5 class="clinic__container__rooms__title">Laboratorio analisi</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/prechirurgia.jpg" data-lightbox="rooms" data-title="La nostra sala pre chirurgia">
+                        <img src="./images/prechirurgia.jpg" alt="pre chirurgia">
+                        <h5 class="clinic__container__rooms__title">Pre chirurgia</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/salavisite2.jpg" data-lightbox="rooms" data-title="La nostra sala chirurgica">
+                        <img src="./images/chirurgia.jpg" alt="chirurgia">
+                        <h5 class="clinic__container__rooms__title">Chirurgia</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/chirurgia.jpg" data-lightbox="rooms" data-title="La nostra seconda sala visite">
+                        <img src="./images/salavisite2.jpg" alt="sala visite 2">
+                        <h5 class="clinic__container__rooms__title">Sala visite 2</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/salarx.jpg" data-lightbox="rooms" data-title="La nostra sala RX">
+                        <img src="./images/salarx.jpg" alt="sola RX">
+                        <h5 class="clinic__container__rooms__title">Sala RX</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3 offset-lg-3">
+                    <a href="./images/salarefertazione.jpg" data-lightbox="rooms" data-title="La nostra sala refertazione">
+                        <img src="./images/salarefertazione.jpg" alt="refertazione">
+                        <h5 class="clinic__container__rooms__title">Refertazione</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="./images/degenza.jpg" data-lightbox="rooms" data-title="La nostra sala degenza">
+                        <img src="./images/degenza.jpg" alt="degenza">
+                        <h5 class="clinic__container__rooms__title">Degenza</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="services__title">I nostri servizi</h1>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="services__contIcon bg-cl-green">
+                                <img src="./images/services/24h.png" alt="icon h24">
+                            </div>
+                            <h6>Reperibilità h24</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="services__contIcon bg-cl-red">
+                                <img src="./images/services/x-ray.png" alt="icon x-ray">
+                            </div>
+                            <h6>Radiologia digitale</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1s">
+                            <div class="services__contIcon bg-cl-yellow">
+                                <img src="./images/services/ultrasound.png" alt="icon ultrasound">
+                            </div>
+                            <h6>Ecografie ed ecodoppler</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="services__contIcon bg-cl-blue">
+                                <img src="./images/services/check.png" alt="icon check">
+                            </div>
+                            <h6>Medicina interna</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="services__contIcon bg-cl-red">
+                                <img src="./images/services/lab.png" alt="icon laboratory">
+                            </div>
+                            <h6>Analisi di laboratorio</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="services__contIcon bg-cl-green">
+                                <img src="./images/services/surgery.png" alt="icon surgery">
+                            </div>
+                            <h6>Chirurgia generale</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1s">
+                            <div class="services__contIcon bg-cl-blue">
+                                <img src="./images/services/orto.png" alt="icon ortopedia">
+                            </div>
+                            <h6>Chirurgia ortopedica</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="services__contIcon bg-cl-yellow">
+                                <img src="./images/services/teeth.png" alt="icon teeth">
+                            </div>
+                            <h6>Chirurgia dentale</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="services__contIcon bg-cl-green">
+                                <img src="./images/services/degenza.png" alt="icon degenza">
+                            </div>
+                            <h6>Degenza</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="services__contIcon bg-cl-red">
+                                <img src="./images/services/stomach.png" alt="icon stomach">
+                            </div>
+                            <h6>Gastroenterologia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1s">
+                            <div class="services__contIcon bg-cl-yellow">
+                                <img src="./images/services/brain.png" alt="icon brain">
+                            </div>
+                            <h6>Neurologia</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="services__contIcon bg-cl-blue">
+                                <img src="./images/services/skin.png" alt="icon skin">
+                            </div>
+                            <h6>Dermatologia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="services__contIcon bg-cl-red">
+                                <img src="./images/services/cardio.png" alt="icon cardio">
+                            </div>
+                            <h6>Cardiologia</h6>
+                        </div>
+                        <div class="col-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="services__contIcon bg-cl-green">
+                                <img src="./images/services/eye.png" alt="icon eye">
+                            </div>
+                            <h6>Oculistica</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeInUp" data-wow-delay="1s">
+                            <div class="services__contIcon bg-cl-blue">
+                                <img src="./images/services/parrot.png" alt="icon parrot">
+                            </div>
+                            <h6>Medicina degli animali non convenzionali ed esotici</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="map" class="wow fadeIn" data-wow-delay=".6s" data-wow-duration="1.4s"></div>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Contatti</h2>
+                    <div class="row">
+                        <div class="col-sm-6 wow bounceInDown" data-wow-delay=".1s">
+                            <a href="mailto:clinicasanleonardo@pec.it">
+                                <div class="contacts__email">
+                                    <h4>Email</h4>
+                                    <img src="./images/contacts/email.png" alt="icon email"> clinicasanleonardo@pec.it
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 wow bounceInup" data-wow-delay="1s">
+                            <a href="tel:+393297226262">
+                                <div class="contacts__phone wow bounceInUp">
+                                    <h4>Telefono</h4>
+                                    <img src="./images/contacts/phone.png" alt="icon phone"> 3297226262
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center text-lg-left">
+                    <h1>Clinica veterinaria San Leonardo</h1>
+                    <p>Via Cafone, Ardore Marina, 89037 (RC) </p>
+                    <p>Tel: 3297226262</p>
+                    <p>Fax: 0964628090</p>
+                    <p>Email: clinicasanleonardo@pec.it</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-center">
+                    <div class="footer__copy">
+                        <small>© 2017 Clinica veterninaria San Leonardo</small>
+                        <small>Web site designed and developed by <a href="mailto:spezzanoluca@gmail.com"> Luca spezzano</a></small>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-right footer__social">
+                    <a href="https://www.facebook.com/clinicasanleonardo">
+                        <img src="./images/social/facebook.png" alt="icon facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    function initMap() {
+        var pos = {
+            lat: 38.177608,
+            lng: 16.207798
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: pos
+        });
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map
+        });
+    }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/vendors/lightbox.min.js"></script>
+    <script type="text/javascript" src="./js/vendors/wow.min.js"></script>
+    <script type="text/javascript" src="./js/app.min.js"></script>
+</body>
+
+</html>
