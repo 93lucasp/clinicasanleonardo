@@ -80,6 +80,7 @@
             @include margin(4em, null, null, null);
             img {
                 @include size(100%, 9em);
+                border-radius: 3px;
                 @media screen and (max-width: map-get($grid-breakpoints, lg)) {
                     @include size(null, 18em);
                 }
