@@ -1,13 +1,15 @@
 # Clinica veterinaria San Leonardo
 
 
- ### technologies
- 
- ##### JQuery
- ##### Javascript
- ####  HTML
- #### CSS
+### technologies
+* HTML5
+* CSS3
+* Sass
+* Bootstrap4
+* jQuery
+* JavaScript
 
-#### You can find it:
-<http://www.clinicasanleonardo.it/>
+
+#### You can give a look here: <http://www.clinicasanleonardo.it/>
+
 
